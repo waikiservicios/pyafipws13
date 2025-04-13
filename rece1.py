@@ -79,6 +79,8 @@ ENCABEZADO = [
     ('fecha_serv_desde', 8, A),  # opcional solo conceptos 2 y 3
     ('fecha_serv_hasta', 8, A),  # opcional solo conceptos 2 y 3
     ('tipo_cbte', 3, N), ('punto_vta', 5, N),
+    ('cancela_misma_moneda_ext', 1, A), # opcional S o N
+    ('condicion_iva_receptor_id', 4, N),
 ]
 
 # DETALLE = [

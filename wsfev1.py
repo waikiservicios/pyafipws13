@@ -150,6 +150,7 @@ class WSFEv1(BaseWS):
                 'fecha_venc_pago': fecha_venc_pago,
                 'moneda_id': moneda_id, 'moneda_ctz': moneda_ctz,
                 'concepto': concepto, 'fecha_hs_gen': fecha_hs_gen,
+                
                 'cbtes_asoc': [],
                 'tributos': [],
                 'iva': [],
@@ -1091,7 +1092,7 @@ def main():
 
             assert wsfev1.EstablecerCampoFactura("cancela_misma_moneda_ext", "N")
             assert wsfev1.EstablecerCampoFactura("condicion_iva_receptor_id", "1")
-            
+
             # comprobantes asociados (notas de credito / debito)
             if tipo_cbte in (2, 3, 7, 8, 12, 13, 202, 203, 208, 213):
                 tipo = 201 if tipo_cbte in (202, 203, 208, 213) else 3
