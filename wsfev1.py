@@ -134,8 +134,8 @@ class WSFEv1(BaseWS):
             cbt_desde=0, cbt_hasta=0, imp_total=0.00, imp_tot_conc=0.00, imp_neto=0.00,
             imp_iva=0.00, imp_trib=0.00, imp_op_ex=0.00, fecha_cbte="", fecha_venc_pago=None,
             fecha_serv_desde=None, fecha_serv_hasta=None, #--
-            moneda_id="PES", moneda_ctz="1.0000", caea=None, fecha_hs_gen=None, cancela_misma_moneda_ext=None,
-            condicion_iva_receptor_id=None, **kwargs
+            moneda_id="PES", moneda_ctz="1.0000", cancela_misma_moneda_ext=None,
+            condicion_iva_receptor_id=None, caea=None, fecha_hs_gen=None, **kwargs
             ):
 
         "Creo un objeto factura (interna)"
@@ -150,7 +150,7 @@ class WSFEv1(BaseWS):
                 'fecha_venc_pago': fecha_venc_pago,
                 'moneda_id': moneda_id, 'moneda_ctz': moneda_ctz,
                 'concepto': concepto, 'fecha_hs_gen': fecha_hs_gen,
-                
+
                 'cbtes_asoc': [],
                 'tributos': [],
                 'iva': [],
@@ -596,6 +596,8 @@ class WSFEv1(BaseWS):
                     'FchVtoPago': f.get('fecha_venc_pago'),
                     'MonId': f['moneda_id'],
                     'MonCotiz': f['moneda_ctz'],
+                    'CanMisMonExt': f.get('cancela_misma_moneda_ext'),
+                    'CondicionIVAReceptorId': f.get('condicion_iva_receptor_id'),
                     'CbtesAsoc': [
                         {'CbteAsoc': {
                             'Tipo': cbte_asoc['tipo'],
